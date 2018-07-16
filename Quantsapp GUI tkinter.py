@@ -8,8 +8,8 @@ import pyodbc
 import csv
 global conn 
 global cursor
-conn = pyodbc.connect(driver='{SQL Server Native Client 11.0}', host='backend.cxzpw0u1iref.ap-south-1.rds.amazonaws.com,3955', database='sales',
-                       user='sales', password='quant123')
+conn = pyodbc.connect(driver='{SQL Server Native Client 11.0}', host='***********', database='********',
+                       user='*****', password='************')
 cursor = conn.cursor()
 
 
@@ -339,8 +339,8 @@ def page_two():
 def search_client():
     global errLabel , add_client_button, list_clients,vsb,tree,hsb,scroll_frame,client_search_frame,clent_details_frame,client_name,client_email,client_phone,client_advisor1,client_advisor2,client_lead,client_code
     #print(search_entry.get())
-    conn = pyodbc.connect(driver='{SQL Server Native Client 11.0}', host='backend.cxzpw0u1iref.ap-south-1.rds.amazonaws.com,3955', database='sales',
-                       user='sales', password='quant123')
+    conn = pyodbc.connect(driver='{SQL Server Native Client 11.0}', host='****************', database='************',
+                       user='*****************', password='****************')
     
     crsr=conn.cursor()
     global advisor_reassign,advisor_list
@@ -786,8 +786,8 @@ def update_client_details():
     global clients_update,name_update,email_update,phone_update
     global root_four
     #conn.close()
-    conn = pyodbc.connect(driver='{SQL Server Native Client 11.0}', host='backend.cxzpw0u1iref.ap-south-1.rds.amazonaws.com,3955', database='sales',
-                       user='sales', password='quant123')
+    conn = pyodbc.connect(driver='{SQL Server Native Client 11.0}', host='***********', database='*********',
+                       user='@@@@@@@@@@@@@@', password='@@@@@@@@@@@')
     cursor = conn.cursor()
     
     if (clients_update.get()).strip()=="":
@@ -840,8 +840,8 @@ def update_client_details():
 def reassign_search():
     global advisor_reassign
     print(advisor_reassign.get(),client_name,client_email,client_advisor1,client_advisor2,client_code)
-    conn = pyodbc.connect(driver='{SQL Server Native Client 11.0}', host='backend.cxzpw0u1iref.ap-south-1.rds.amazonaws.com,3955', database='sales',
-                       user='sales', password='quant123')
+    conn = pyodbc.connect(driver='{SQL Server Native Client 11.0}', host='@@@@@@@@@@@@@@@', database='@@@@@@@@@@@@@@',
+                       user='@@@@@@@@@@@@', password='@@@@@@@')
     cursor = conn.cursor()
     try:
         cursor.execute(('update dbo.master_table set advisor2=? where client_code=?'),advisor_reassign.get(),client_code)
@@ -1169,8 +1169,8 @@ def create_client():
     global month_dict_2
     global menu_status_, menu_leads_,clients,feedback,advisors,name,price,phone,email,comment,menu_years_,menu_months_,menu_dates_,menu_products_,menu_prob_,menu_year_nc_,menu_month_nc_,menu_date_nc_,menu_time_hour_,menu_time_min_,menu_time_AMorPM_
     #print( menu_status, menu_leads,clients,feedback,advisors,name,price,phone,email,comment,menu_years.get(),menu_months.get(),menu_dates.get(),menu_products,menu_prob,menu_year_nc.get(),menu_month_nc.get(),menu_date_nc.get(),menu_time_hour.get(),menu_time_min.get(),menu_time_AMorPM.get())
-    conn = pyodbc.connect(driver='{SQL Server Native Client 11.0}', host='backend.cxzpw0u1iref.ap-south-1.rds.amazonaws.com,3955', database='sales',
-                       user='sales', password='quant123')
+    conn = pyodbc.connect(driver='{SQL Server Native Client 11.0}', host='@@@@@@@@@@@', database='@@@@@@@@@@@',
+                       user='@@@@@@@', password='@@@@@@@@@@@@@@')
     cursor = conn.cursor()
     if str(menu_status_.get())=='Open':
         cursor.execute(('insert into dbo.followup values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)'),str(clients.get()),str(menu_years_.get())
@@ -1200,8 +1200,8 @@ def create_client_new():
     global month_dict_2
     global menu_status, menu_leads,clients,feedback,advisors,name,price,phone,email,comment,menu_years,menu_months,menu_dates,menu_products,menu_prob,menu_year_nc,menu_month_nc,menu_date_nc,menu_time_hour,menu_time_min,menu_time_AMorPM
     #print( menu_status, menu_leads,clients,feedback,advisors,name,price,phone,email,comment,menu_years.get(),menu_months.get(),menu_dates.get(),menu_products,menu_prob,menu_year_nc.get(),menu_month_nc.get(),menu_date_nc.get(),menu_time_hour.get(),menu_time_min.get(),menu_time_AMorPM.get())
-    conn = pyodbc.connect(driver='{SQL Server Native Client 11.0}', host='backend.cxzpw0u1iref.ap-south-1.rds.amazonaws.com,3955', database='sales',
-                       user='sales', password='quant123')
+    conn = pyodbc.connect(driver='{SQL Server Native Client 11.0}', host='@@@@@@@@@@@', database='@@@@@@@@@@@',
+                       user='@@@@@@@', password='@@@@@@@@@@@@@@')
     cursor = conn.cursor()
     if str(menu_status_.get())=='Open':
         cursor.execute(('insert into dbo.followup values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)'),str(clients.get()),str(menu_years_.get())
@@ -1237,8 +1237,8 @@ def create_client_newest():
     #print( menu_status, menu_leads,clients,feedback,advisors,name,price,phone,email,comment,menu_years.get(),menu_months.get(),menu_dates.get(),menu_products,menu_prob,menu_year_nc.get(),menu_month_nc.get(),menu_date_nc.get(),menu_time_hour.get(),menu_time_min.get(),menu_time_AMorPM.get())
     #print(type(str(clients.get())),type(str(menu_years_.get())),'yes',type(str(month_dict_2[str(menu_months_.get())])),type(str(menu_dates_.get())))
     #print(menu_years_.get(),str(month_dict_2[str(menu_months_.get())]))
-    conn = pyodbc.connect(driver='{SQL Server Native Client 11.0}', host='backend.cxzpw0u1iref.ap-south-1.rds.amazonaws.com,3955', database='sales',
-                       user='sales', password='quant123')
+    conn = pyodbc.connect(driver='{SQL Server Native Client 11.0}', host='@@@@@@@@@@@', database='@@@@@@@@@@@',
+                       user='@@@@@@@', password='@@@@@@@@@@@@@@')
     cursor = conn.cursor()
     if list_var[0][0] =='admin':
         x=admin_advisor.get()
@@ -1273,8 +1273,8 @@ def create_client_dashtree():
     global month_dict_2,add_comment_dict
     global menu_status_, menu_leads_,clients,feedback,advisors,name,price,phone,email,comment,menu_years_,menu_months_,menu_dates_,menu_products_,menu_prob_,menu_year_nc_,menu_month_nc_,menu_date_nc_,menu_time_hour_,menu_time_min_,menu_time_AMorPM_
     #print( menu_status, menu_leads,clients,feedback,advisors,name,price,phone,email,comment,menu_years.get(),menu_months.get(),menu_dates.get(),menu_products,menu_prob,menu_year_nc.get(),menu_month_nc.get(),menu_date_nc.get(),menu_time_hour.get(),menu_time_min.get(),menu_time_AMorPM.get())
-    conn = pyodbc.connect(driver='{SQL Server Native Client 11.0}', host='backend.cxzpw0u1iref.ap-south-1.rds.amazonaws.com,3955', database='sales',
-                       user='sales', password='quant123')
+    conn = pyodbc.connect(driver='{SQL Server Native Client 11.0}', host='@@@@@@@@@@@', database='@@@@@@@@@@@',
+                       user='@@@@@@@', password='@@@@@@@@@@@@@@')
     cursor = conn.cursor()
     if str(menu_status_.get())=='Open':
         cursor.execute(('insert into dbo.followup values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)'),str(clients.get()),str(menu_years_.get())
@@ -1314,8 +1314,8 @@ def refresh_dashtree():
 
 def dashtree_default():
     import pyodbc
-    conn = pyodbc.connect(driver='{SQL Server Native Client 11.0}', host='backend.cxzpw0u1iref.ap-south-1.rds.amazonaws.com,3955', database='sales',
-                           user='sales', password='quant123')
+    conn = pyodbc.connect(driver='{SQL Server Native Client 11.0}', host='@@@@@@@@@@@', database='@@@@@@@@@@@',
+                       user='@@@@@@@', password='@@@@@@@@@@@@@@')
     cursor = conn.cursor()
     import datetime
     global advisor
@@ -1405,8 +1405,8 @@ def returnfilter():###############code for getting sql query for filter
     #print("filter applied")
     global menu_adv,menu_stat,menu_,menu_prob,menu_mont,menu_yea,menu_dat,flagfilter
     import pyodbc
-    conn = pyodbc.connect(driver='{SQL Server Native Client 11.0}', host='backend.cxzpw0u1iref.ap-south-1.rds.amazonaws.com,3955', database='sales',
-                       user='sales', password='quant123')
+    conn = pyodbc.connect(driver='{SQL Server Native Client 11.0}', host='@@@@@@@@@@@', database='@@@@@@@@@@@',
+                       user='@@@@@@@', password='@@@@@@@@@@@@@@')
     cursor = conn.cursor()
 
     global advisor
@@ -1560,8 +1560,8 @@ def returnfilter():###############code for getting sql query for filter
 
 flagfilter=1
 def allproducts():
-    conn = pyodbc.connect(driver='{SQL Server Native Client 11.0}', host='backend.cxzpw0u1iref.ap-south-1.rds.amazonaws.com,3955', database='sales',
-                       user='sales', password='quant123')
+    conn = pyodbc.connect(driver='{SQL Server Native Client 11.0}', host='@@@@@@@@@@@', database='@@@@@@@@@@@',
+                       user='@@@@@@@', password='@@@@@@@@@@@@@@')
     cursor=conn.cursor()
     #_code,def.email_id,def.phone,def.advisor1,def.advisor2 from(select email_id,phone,client_code from dbo.followup     group by client_code,phone,email_id) as abc, ((select \'\' as email_id ,\'\' as phone , client_code,advisor1,advisor2 from dbo.master_table) union (select email_id, phone, \'\' as client_code,advisor1,advisor2 from dbo.other)) as def where abc.client_code != def.client_code and abc.email_id != def.email_id and abc.phone != def.phone and (def.advisor1=\'neel\' or def.advisor2=\'neel\'))' 
     sql='select name from dbo.products'
